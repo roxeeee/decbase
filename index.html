@@ -1936,8 +1936,7 @@
 
 				</div>
 
-				<div class="clients__bottom">
-
+				<!-- SLIDER
 					<div class="clients__slider">
 
 						<div class="client__slider">
@@ -1965,85 +1964,24 @@
 
 						</div>
 
-						<div class="client__slider">
-
-							<div class="slider__img">
-								<img class="img__slider" src="img/client/client1.png" alt="client">
-							</div>
-
-							<div class="slider__content">
-
-								<div class="slider__content-up">
-									<h1 class="slider__title">Rekha Varadwaz<span class="slider__subtitle"> /Manager at Nike inc</span></h1>
-									<img class="content__img" src="img/quotes.png" alt="icons">
-								</div>
-
-								<div class="slider__content-bottom">
-									<p class="slider__desc">
-										Lorem ipsum dolor sit amet, consectetur adipiscing 
-										elit, sed do eiusmod tempor incididunt ut labore
-										et dolore magna aliqua.
-									</p>
-								</div>
-
-							</div>
-
-						</div>
-
-						<div class="client__slider">
-
-							<div class="slider__img">
-								<img class="img__slider" src="img/client/client3.avif" alt="client">
-							</div>
-
-							<div class="slider__content">
-
-								<div class="slider__content-up">
-									<h1 class="slider__title">Michael Torres<span class="slider__subtitle"> /CEO at Google inc</span></h1>
-									<img class="content__img" src="img/quotes.png" alt="icons">
-								</div>
-
-								<div class="slider__content-bottom">
-									<p class="slider__desc">
-										Lorem ipsum dolor sit amet, consectetur adipiscing 
-										elit, sed do eiusmod tempor incididunt ut labore
-										et dolore magna aliqua.
-									</p>
-								</div>
-
-							</div>
-
-						</div>
-
-						<div class="client__slider">
-
-							<div class="slider__img">
-								<img class="img__slider" src="img/client/client4.avif" alt="client">
-							</div>
-
-							<div class="slider__content">
-
-								<div class="slider__content-up">
-									<h1 class="slider__title">Pearl Rios<span class="slider__subtitle"> /Manager at Nike inc</span></h1>
-									<img class="content__img" src="img/quotes.png" alt="icons">
-								</div>
-
-								<div class="slider__content-bottom">
-									<p class="slider__desc">
-										Lorem ipsum dolor sit amet, consectetur adipiscing 
-										elit, sed do eiusmod tempor incididunt ut labore
-										et dolore magna aliqua.
-									</p>
-								</div>
-
-							</div>
-
-						</div>
-
 					</div>
+				-->
 
-				</div>
-					
+				<div id="app"></div>
+
+				<!-- Подключение к Vue.js -->
+				<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+				
+				<!-- Импортирование основного компонента приложения. -->
+				<script src="vue/App.vue"></script>
+
+				<script>
+					new Vue({
+					el: '#app',
+					render: h => h(App)
+					});
+				</script>
+
 			</div>
 
 		</section>
@@ -2446,17 +2384,18 @@
 				Find out early about all upcoming promotions and new product releases with
 				our newsletter.
 			</p>
+			<div id="app">
+				<form  class="form" action="" method="">
 
-			<form  class="form" action="" method="">
+					<div class="form__input">
 
-				<div class="form__input">
+						<input class="input" type="email" placeholder="Enter your email address....." v-model="email" id="emailInput" @input="validateEmail" required>
+						<button @click="submitEmail" class="submit btn" type="submit">SUBSCRIBE</button>
 
-					<input class="input" type="email" placeholder="Enter your email address....." name="email">
-					<button class="submit btn" type="submit">SUBSCRIBE</button>
+					</div>
 
-				</div>
-
-			</form>
+				</form>
+			</div>
 
 			<div class="contact__background">
 				<svg xmlns="http://www.w3.org/2000/svg" width="213" height="154" viewBox="0 0 213 154" fill="none">
@@ -2886,7 +2825,7 @@
 
 	<!-- script's JavaScript -->
 	<script src="js/script.js"></script>
+	<script src="js/validation.js"></script>
 	<!-- script's JavaScript -->
-
 </body>
 </html>

@@ -615,6 +615,7 @@ span {
 }
 
 .clients__up {
+	position: relative;
 	display: flex;
 }
 
@@ -638,7 +639,9 @@ span {
 }
 
 .clients__arrows {
+	position: absolute;
 	margin: 57px 0 0;
+	right: 0;
 	display: flex;
 	gap: 18px;
 }
